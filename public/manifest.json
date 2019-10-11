@@ -1,6 +1,7 @@
+  
 {
-  "short_name": "Veri Clock",
-  "name": "Veri Clock",
+  "short_name": "Control Horario",
+  "name": "Control Horario Veritas",
   "icons": [
     {
       "src": "favicon.ico",
