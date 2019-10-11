@@ -1,26 +1,45 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { Component } from 'react';
+import { Route , Switch } from 'react-router-dom';
 import './App.css';
+import Clock from './pages/Clock';
+import NotFound from './Componentes/NotFound';
+import LoadingDots from './Componentes/LoadingDots';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+require('dotenv').config();
+
+class App extends Component {
+  
+  state = {
+    isLoading: true,
+    status: "loading",
+  }
+
+  componentDidMount(){
+    setTimeout(() => {
+      this.setState({
+        status: "loaded",
+        isLoading: false
+      })
+    
+    }, 1000);
+  };
+
+  render () { 
+   
+    const { isLoading } = this.state;
+     
+    return (
+      isLoading ? 
+      <div className='App'>
+        <LoadingDots/>
+      </div>
+      :
+      <Switch>
+        <Route exact path="/" component={Clock} />
+        <Route path='*' exact={true} component={NotFound} />
+      </Switch>
+    );
+  }
 }
 
 export default App;
