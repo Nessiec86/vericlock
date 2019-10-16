@@ -108,8 +108,7 @@ class Clocksign extends Component {
         const dateObj = new Date(start * 1000); 
         const utcString = dateObj.toString(); 
         time = utcString.slice(16, 24); 
-        console.log(this.state.data.data)
-
+       
         return (
             <div className='clock-sign'>
                 <input
