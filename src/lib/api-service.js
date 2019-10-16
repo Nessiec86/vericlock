@@ -12,8 +12,8 @@ class User {
     read = (id) => {
         return this.User
         .get(`idCheck/?keyword=${id}`)
-        .then(({ data }) => data);
-        };
+        .then(({ data }) => data );
+    };
 
     change = (id) => {
         return this.User

@@ -30,6 +30,7 @@ class Clocksign extends Component {
                         data,
                     });
                 }
+                console.log(this.state.data)
             })
             .catch(error => {
                 this.setState({
@@ -37,8 +38,6 @@ class Clocksign extends Component {
                     isLoading: false
                 });
             });
-        } else {
-
         }
     };
     
@@ -53,7 +52,6 @@ class Clocksign extends Component {
             this.handleSubmit(event)
             setTimeout(() => {
                 this.setState({
-                    text: '',
                     data: {
                         data: {
                             id:'',
@@ -61,8 +59,9 @@ class Clocksign extends Component {
                             start: '',
                         },
                     },
+                    text: '',
                 })
-            }, 100);
+            }, 50);
             setTimeout(() => {
                 this.setState({
                     verify: false,
