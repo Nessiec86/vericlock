@@ -62,7 +62,7 @@ class Clocksign extends Component {
                         },
                     },
                 })
-            }, 50);
+            }, 100);
             setTimeout(() => {
                 this.setState({
                     verify: false,
