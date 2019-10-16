@@ -18,23 +18,26 @@ class Clocksign extends Component {
         isLoading: true,
         status: "loading",
         working:'',
+        verify: false
     }
     
     handleSubmit = (event) => {
+        
         user.read (event)
-        .then((data) => { 
-            if (data.data.id > 0) {
+            .then((data) => { 
+                if (data.data.id > 0) {
+                    this.setState({
+                        data,
+                    });
+                }
+            })
+            .catch(error => {
                 this.setState({
-                    data,
+                    status: "error",
+                    isLoading: false
                 });
-            }
-        })
-        .catch(error => {
-            this.setState({
-                status: "error",
-                isLoading: false
             });
-        });
+        
     };
     
     handleWork = (event) => {
@@ -43,11 +46,28 @@ class Clocksign extends Component {
             this.setState({
                 working,
                 date: new Date().toString(),
+                verify: true,
             });
             this.handleSubmit(event)
-            window.location.reload();
+            setTimeout(() => {
+                this.setState({
+                    data: {
+                        data: {
+                            id:'',
+                            name: '',
+                            start: '',
+                        },
+                    },
+                })
+            }, 100);
+            setTimeout(() => {
+                this.setState({
+                    verify: false,
+                    text: '',
+                    
+                })
+            }, 2500);
         })
-        
         .catch(error => {
             this.setState({
                 status: "error",
@@ -55,7 +75,9 @@ class Clocksign extends Component {
             });
         });
     };
-
+    
+    
+    
     handleSubmit2 = () => {
         user.tokenGet(undefined)
         
@@ -66,17 +88,21 @@ class Clocksign extends Component {
         const { name, value } = event.target;
         this.setState({ [name]: value });
     };
-    
-    
+
+   
 
     render() {
         let time = 0
-        const { text } = this.state
+        const { text, verify } = this.state
         const { name, start } = this.state.data.data
         const dateObj = new Date(start * 1000); 
         const utcString = dateObj.toString(); 
         time = utcString.slice(16, 24); 
         
+        console.log(verify)
+        console.log(start)
+        console.log(this.state.data)
+      
         return (
                 <div className='clock-sign'>
                     <input
@@ -93,17 +119,23 @@ class Clocksign extends Component {
                         <p style={{margin:'1.3rem 0'}}></p>
                     }
                     <Button variant="success"className='val' onClick={() => this.handleSubmit(text)}>VALIDAR</Button>
-                    {name.length < 9 ?
+                    <div style={{position: 'absolute', alignSelf: 'center', margin: '1rem 0'}}>
+                        { verify === true ?
+                            <i className="far fa-thumbs-up" style={{fontSize: '5rem', color: '#ac451d'}}></i>
+                            :
+                            <div>
+                            </div>
+                        }
+                    </div>
+                    { name.length < 9  ?
                         <div>
                         </div>
                         :
                         <div style={{display:'flex', justifyContent:'center'}}>
                             {start === 0 ?
                                 <Button variant="success" className='work' onClick={() => this.handleWork(text)}>EMPEZAR A TRABAJAR</Button>
-                                :
-                                <>
+                            :
                                 <Button variant="danger" className='work' onClick={() => this.handleWork(text)}>DEJAR DE TRABAJAR</Button>
-                                </>
                             }
                         </div>
                     }
