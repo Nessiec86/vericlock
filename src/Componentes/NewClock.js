@@ -38,9 +38,11 @@ class NewClock extends Component {
       <div className='newclock'>
         <p id="date">{d}</p>
         <hr/>
-        <h3 id="hours">{h}:</h3>
-        <h3 id="minutes">{m}:</h3>
-        <h3 id="seconds">{s}</h3>
+        <div style={{width: 'fit-content', margin: '0 auto'}}>
+          <h3 id="hours">{h}:</h3>
+          <h3 id="minutes">{m}:</h3>
+          <h3 id="seconds">{s}</h3>
+        </div>
       </div>
     );
   }

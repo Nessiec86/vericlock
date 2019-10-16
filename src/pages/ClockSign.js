@@ -59,7 +59,7 @@ class Clocksign extends Component {
                         },
                     },
                 })
-            }, 100);
+            }, 50);
             setTimeout(() => {
                 this.setState({
                     verify: false,
@@ -99,10 +99,6 @@ class Clocksign extends Component {
         const utcString = dateObj.toString(); 
         time = utcString.slice(16, 24); 
         
-        console.log(verify)
-        console.log(start)
-        console.log(this.state.data)
-      
         return (
                 <div className='clock-sign'>
                     <input
