@@ -53,6 +53,7 @@ class Clocksign extends Component {
             this.handleSubmit(event)
             setTimeout(() => {
                 this.setState({
+                    text: '',
                     data: {
                         data: {
                             id:'',
@@ -65,8 +66,6 @@ class Clocksign extends Component {
             setTimeout(() => {
                 this.setState({
                     verify: false,
-                    text: '',
-                    
                 })
             }, 2500);
         })
@@ -116,27 +115,26 @@ class Clocksign extends Component {
                     onChange={this.handleChange}
                     name="text"
                     value={text}
-                    style={{margin:'0 0 1rem 0'}}
+                    style={{margin:'2rem 0'}}
                 />
-                <p style={{margin:'1rem 0'}}>{name}</p>
+                <p style={{margin:'1rem auto'}}>{name}</p>
                 {start > 0 ?
-                    <p>Hora de Entrada: {time}</p>
+                    <p style={{margin: '0 auto'}}> Hora de Entrada: {time}</p>
                 :
                     <p style={{margin:'1.3rem 0'}}></p>
                 }
-                <Button variant="success"className='val' onClick={() => this.handleSubmit(text)}>VALIDAR</Button>
-                <div style={{position: 'absolute', alignSelf: 'center', margin: '1rem 0'}}>
+                {/* <Button variant="success"className='val' onClick={() => this.handleSubmit(text)}>VALIDAR</Button> */}
+                <div style={{position: 'absolute', alignSelf: 'center'}}>
                     { verify === true ?
-                        <i className="far fa-thumbs-up" style={{fontSize: '5rem', color: '#ac451d'}}></i>
+                        <i className="far fa-thumbs-up" style={{fontSize: '7rem', color: '#ac451d', position: 'absolute', margin: '-7rem -3rem'}}></i>
                     :
                         <div>
                         </div>
                     }
                 </div>
                 { name === '' || text.length < 9 ?
-                    <div>
-                    </div>
-                    : 
+                    <Button variant="success" className='val' onClick={() => this.handleSubmit(text)}>VALIDAR</Button>
+                : 
                     <div style={{display:'flex', justifyContent:'center'}}>
                         {start === 0 ?
                             <Button variant="success" className='work' onClick={() => this.handleWork(text)}>EMPEZAR A TRABAJAR</Button>

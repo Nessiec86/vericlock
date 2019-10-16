@@ -97,11 +97,14 @@
 }
 
 .val {
-  margin-bottom: 17rem;
+  margin: 45% auto 55% auto;
+  padding: 5% 15% 5% 15%;
+  width: max-content;
 }
 .work {
-  margin:-10rem 0 5rem 0;
-  padding: 0 auto;
+  margin: 45% 0 55% 0;
+  padding: 5%;
+  width: max-content;
 }
 time {
   margin: 10% 0;
@@ -292,7 +295,10 @@ hr {
   .newclock {
     margin: 5% 0;
   }
-  .val {
-    margin-bottom: 15rem;
+  .work {
+    margin: 40% 0 50% 0;
+  }
+  .val{
+    margin: 40% auto 50% auto;
   }
 }
