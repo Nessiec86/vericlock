@@ -47,6 +47,7 @@ class Clocksign extends Component {
                 working,
                 date: new Date().toString(),
                 verify: true,
+                text: '',
             });
             this.handleSubmit(event)
             setTimeout(() => {
@@ -58,7 +59,6 @@ class Clocksign extends Component {
                             start: '',
                         },
                     },
-                    text: '',
                 })
             }, 50);
             setTimeout(() => {
