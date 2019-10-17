@@ -11,7 +11,7 @@ const DotWrapper = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 90% 0;
+  margin: 50% 0 60% 0;
   background-color: #ac451d;
 `;
 

@@ -302,3 +302,106 @@ hr {
     margin: 40% auto 50% auto;
   }
 }
+
+/*LOGO DE VERITAS*/
+
+#logo{
+  font-family: 'Verifont';
+  width: 60px;
+	height: 80px;
+	transform-origin: left bottom;
+	animation: total 3s 1s forwards;
+  text-align:center;
+  align-self: center;
+  margin: 6rem 0 5rem -19rem;
+  
+} 
+#logo p{ 
+  position: absolute; 
+	width: max-content;
+	height: 80px;
+  transform-origin: left bottom;
+  font-size: 60px;
+  background-color: #ac451d;
+}
+
+#one{	
+	z-index: 10;
+	animation: one .5s 1s forwards;
+}
+#two{
+	z-index: 9;
+	animation: two .5s 2s forwards;
+}
+
+#three{
+	z-index: 8;
+	animation: three .5s 2.2s forwards;
+}
+
+#four{
+	z-index: 7;
+	animation: four .5s 2.4s forwards;
+}
+#five{
+	z-index: 6;
+	animation: five .5s 2.6s forwards; 
+}
+#six{
+	z-index: 5;
+	animation: six .5s 2.8s forwards;   
+}
+#seven{
+	z-index: 4;
+	animation: seven .5s 3s forwards;   
+}
+
+@keyframes total {
+	0% {
+		opacity: 0;
+		transform:scale(1,0)
+	}
+
+	25% {
+		opacity: 1;
+		transform: scale(1);
+    
+  }
+  88%
+  {
+     color:#000; 
+	} 
+  100%
+  {
+    transform: scale(1.5);
+    color: white;
+  }
+    
+}
+
+ 
+@keyframes one {
+  100%{}
+}
+
+@keyframes two 
+{
+100% {left:60%;}
+}
+@keyframes three 
+{
+100% {left:120%;}
+}
+@keyframes four {
+100% {left:190%;}
+}
+@keyframes five 
+{
+100% {left:230%;}
+}
+@keyframes six {
+100% {left:290%;}
+}
+@keyframes seven {
+100% {left:360%;}
+}
