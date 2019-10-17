@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import user from '../lib/api-service';
 import { Button } from 'react-bootstrap';
-import { icon } from '../icon/thumbs-up-regular.svg';
+import icon from '../icon/thumbs-up-regular.svg';
 
 class Clocksign extends Component {
 
@@ -38,7 +38,6 @@ class Clocksign extends Component {
                 });
             });
         }
-        console.log('fichado')
     };
     
     handleWork = (event) => {
@@ -49,7 +48,7 @@ class Clocksign extends Component {
                 date: new Date().toString(),
                 verify: true,
             });
-            // this.handleSubmit(event)
+            this.handleSubmit(event)
             setTimeout(() => {
                 this.setState({
                     data: {
@@ -66,7 +65,7 @@ class Clocksign extends Component {
                 this.setState({
                     verify: false,
                 })
-            }, 250000);
+            }, 2500);
         })
         .catch(error => {
             this.setState({
@@ -75,13 +74,6 @@ class Clocksign extends Component {
             });
         });
     };
-    
-    
-    handleSubmit2 = () => {
-        user.tokenGet(undefined)
-        
-    };
-    
    
     handleChange = event => {
         const { name, value } = event.target;
@@ -106,7 +98,7 @@ class Clocksign extends Component {
         const dateObj = new Date(start * 1000); 
         const utcString = dateObj.toString(); 
         time = utcString.slice(16, 24); 
-       
+      
         return (
             <div className='clock-sign'>
                 <input
@@ -122,12 +114,10 @@ class Clocksign extends Component {
                 :
                     <p style={{margin:'1.3rem 0'}}></p>
                 }
-                {/* <Button variant="success"className='val' onClick={() => this.handleSubmit(text)}>VALIDAR</Button> */}
-                <div style={{position: 'absolute', alignSelf: 'center'}}>
+                <div style={{alignSelf: 'center'}}>
                     { verify === true ?
-                        //<i className="far fa-thumbs-up" style={{fontSize: '7rem', color: '#ac451d', position: 'absolute', margin: '-7rem -3rem'}}></i>
-                        <img src={icon} style={{fontSize: '7rem', color: '#ac451d', position: 'absolute', margin: '-7rem -3rem'}} alt='Okey'></img>
-                    :
+                        <img src={icon} style={{width: '30%', position: 'absolute', margin: '-10% 0 0 -13%'}} alt='Okey'/>
+                        :
                         <div>
                         </div>
                     }
