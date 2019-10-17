@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import user from '../lib/api-service';
-// import ClockButtons from '../Components/ClockButtons';
 import { Button } from 'react-bootstrap';
+import { icon } from '../icon/thumbs-up-regular.svg';
 
 class Clocksign extends Component {
 
@@ -23,22 +23,22 @@ class Clocksign extends Component {
     
     handleSubmit = (event) => {
         if (this.state.text.length === 9) {
-        user.read (event)
-            .then((data) => { 
-                if (data.data.id > 0) {
-                    this.setState({
-                        data,
-                    });
-                }
-                console.log(this.state.data)
-            })
-            .catch(error => {
+            user.read (event)
+                .then((data) => { 
+                    if (data.data.id > 0) {
+                        this.setState({
+                            data,
+                        });
+                    }
+                })
+                .catch(error => {
                 this.setState({
                     status: "error",
                     isLoading: false
                 });
             });
         }
+        console.log('fichado')
     };
     
     handleWork = (event) => {
@@ -49,7 +49,7 @@ class Clocksign extends Component {
                 date: new Date().toString(),
                 verify: true,
             });
-            this.handleSubmit(event)
+            // this.handleSubmit(event)
             setTimeout(() => {
                 this.setState({
                     data: {
@@ -66,7 +66,7 @@ class Clocksign extends Component {
                 this.setState({
                     verify: false,
                 })
-            }, 2500);
+            }, 250000);
         })
         .catch(error => {
             this.setState({
@@ -125,7 +125,8 @@ class Clocksign extends Component {
                 {/* <Button variant="success"className='val' onClick={() => this.handleSubmit(text)}>VALIDAR</Button> */}
                 <div style={{position: 'absolute', alignSelf: 'center'}}>
                     { verify === true ?
-                        <i className="far fa-thumbs-up" style={{fontSize: '7rem', color: '#ac451d', position: 'absolute', margin: '-7rem -3rem'}}></i>
+                        //<i className="far fa-thumbs-up" style={{fontSize: '7rem', color: '#ac451d', position: 'absolute', margin: '-7rem -3rem'}}></i>
+                        <img src={icon} style={{fontSize: '7rem', color: '#ac451d', position: 'absolute', margin: '-7rem -3rem'}} alt='Okey'></img>
                     :
                         <div>
                         </div>
