@@ -97,7 +97,7 @@
 }
 
 .val {
-  margin: 45% auto 55% auto;
+  margin: 45% auto 65% auto;
   padding: 5% 15% 5% 15%;
   width: max-content;
 }
@@ -325,19 +325,17 @@ hr {
 }
 
 #one{	
-	z-index: 10;
+  z-index: 10;
 	animation: one .5s 1s forwards;
 }
 #two{
-	z-index: 9;
+ 	z-index: 9;
 	animation: two .5s 2s forwards;
 }
-
 #three{
-	z-index: 8;
+ 	z-index: 8;
 	animation: three .5s 2.2s forwards;
 }
-
 #four{
 	z-index: 7;
 	animation: four .5s 2.4s forwards;
@@ -356,15 +354,13 @@ hr {
 }
 
 @keyframes total {
-	0% {
-		opacity: 0;
+  0% {
+    opacity: 0;
 		transform:scale(1,0)
 	}
-
 	25% {
 		opacity: 1;
-		transform: scale(1);
-    
+    transform: scale(1);
   }
   88%
   {
@@ -375,32 +371,26 @@ hr {
     transform: scale(1.5);
     color: white;
   }
-    
 }
-
  
 @keyframes one {
   100%{}
 }
-
-@keyframes two 
-{
-100% {left:60%;}
+@keyframes two {
+  100% {left:60%;}
 }
-@keyframes three 
-{
-100% {left:120%;}
+@keyframes three {
+  100% {left:120%;}
 }
 @keyframes four {
-100% {left:190%;}
+  100% {left:190%;}
 }
-@keyframes five 
-{
-100% {left:230%;}
+@keyframes five {
+  100% {left:230%;}
 }
 @keyframes six {
-100% {left:290%;}
+  100% {left:290%;}
 }
 @keyframes seven {
-100% {left:360%;}
+  100% {left:360%;}
 }
