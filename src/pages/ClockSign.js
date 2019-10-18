@@ -116,7 +116,7 @@ class Clocksign extends Component {
                 }
                 <div style={{alignSelf: 'center'}}>
                     { verify === true ?
-                        <img src={icon} style={{width: '30%', position: 'absolute', margin: '-20% 0 0 -13%'}} alt='Okey'/>
+                        <img src={icon} style={{width: '30%', position: 'absolute', margin: '-10% 0 0 -13%'}} alt='Okey'/>
                         :
                         <div>
                         </div>
