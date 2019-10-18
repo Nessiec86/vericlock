@@ -50,7 +50,7 @@ class Clocksign extends Component {
                 text: '',
             });
             this.handleSubmit(event)
-            setTimeout(() => {
+            //setTimeout(() => {
                 this.setState({
                     data: {
                         data: {
@@ -60,7 +60,7 @@ class Clocksign extends Component {
                         },
                     },
                 })
-            }, 50);
+            //}, 50);
             setTimeout(() => {
                 this.setState({
                     verify: false,

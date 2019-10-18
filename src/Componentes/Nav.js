@@ -1,18 +1,18 @@
 import React, { Component } from "react";
 import logoveri from '../img/layout_set_logo.png';
-    import { Button } from 'react-bootstrap';
+// import { Button } from 'react-bootstrap';
 
 class Nav extends Component {
     
-    handleReturn = () => {
-        window.history.back()
-    }
+    // handleReturn = () => {
+    //     window.history.back()
+    // }
 
     render() {
 
         return (
             <nav className='nav'>
-                <div>
+                <div style={{margin: '0 auto'}}>
                     <img src={logoveri} alt="veri" style={{width: '5rem'}}></img>
                 </div>
                 {/* <div>
@@ -25,11 +25,11 @@ class Nav extends Component {
                     <img src="../Images/account@3x.png" alt="my smar-t" style={{width: '3rem'}}></img>  
                 </Link>
                 </div> */}
-                <div className='link'> 
+                {/* <div className='link'> 
                     <span className='link-icon'>
                         <Button className='fas fa-backward' style={{backgroundColor:'transparent', border:'transparent'}}onClick={()=> this.handleReturn()}/>
                     </span>
-                </div>
+                </div> */}
             </nav>
         );
     }
