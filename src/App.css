@@ -204,13 +204,11 @@ time {
 .logos {
   display: flex;
   flex-direction: column;
- 
 }
 .buttons {
   display: inline-flex;
   flex-direction: column;
 }
-
 
 /* iPhone XS Max, XR ----------- */
 @media only screen and (min-width: 414px) and (max-height: 896px) {
@@ -242,8 +240,6 @@ time {
 
   }
 }
-
-
 /* NEW CLOCK STYLES */
 /* html, body { height: 100%; margin: 0; overflow: hidden; }
 
@@ -266,7 +262,6 @@ hr {
   border: 0;
   border-bottom: 1px solid #444;
 }
-
 #date, #hours, #minutes, #seconds {
   margin: 0;
   text-shadow: 0rem 0rem 1rem rgba(255, 255, 255, 0.7), 
@@ -314,7 +309,7 @@ hr {
   text-align:center;
   align-self: center;
   margin: 6rem 0 5rem -19rem;
-} 
+}
 #logo p{ 
   position: absolute; 
 	width: max-content;
@@ -323,7 +318,6 @@ hr {
   font-size: 60px;
   background-color: #ac451d;
 }
-
 #one{	
   z-index: 10;
 	animation: one .5s 1s forwards;

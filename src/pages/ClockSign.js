@@ -49,17 +49,17 @@ class Clocksign extends Component {
                 verify: true,
                 text: '',
             });
-           this.handleSubmit(event)
+            this.handleSubmit(event)
             //setTimeout(() => {
-                this.setState({
+            this.setState({
+                data: {
                     data: {
-                        data: {
-                            id:'',
-                            name: '',
-                            start: '',
-                        },
+                        id:'',
+                        name: '',
+                        start: '',
                     },
-                })
+                },
+            })
             //}, 50);
             setTimeout(() => {
                 this.setState({
