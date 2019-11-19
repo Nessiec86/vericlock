@@ -97,7 +97,7 @@
 }
 
 .val {
-  margin: 45% auto 55% auto;
+  margin: 45% auto 60% auto;
   padding: 5% 15% 5% 15%;
   width: max-content;
 }
@@ -293,7 +293,7 @@ hr {
   .work {
     margin: 40% 0 50% 0;
   }
-  .val{
+  .val {
     margin: 40% auto 50% auto;
   }
 }

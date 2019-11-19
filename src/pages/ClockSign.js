@@ -107,6 +107,7 @@ class Clocksign extends Component {
                     name="text"
                     value={text}
                     style={{margin:'2rem 0'}}
+                    type="password"
                 />
                 <p style={{margin:'1rem auto'}}>{name}</p>
                 {start > 0 ?
@@ -116,7 +117,7 @@ class Clocksign extends Component {
                 }
                 <div style={{alignSelf: 'center'}}>
                     { verify === true ?
-                        <img src={icon} style={{width: '30%', position: 'absolute', margin: '-10% 0 0 -13%'}} alt='Okey'/>
+                        <img src={icon} style={{width: '30%', position: 'absolute', margin: '-15% 0 0 -13%'}} alt='Okey'/>
                         :
                         <div>
                         </div>
