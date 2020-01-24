@@ -17,6 +17,11 @@
 
 .backgr {
   background-image: url('./img/fond-home1280.jpg');
+  position: absolute;
+  top: 0;
+  left: 0;
+  min-width: 100%;
+  min-height: 100%;
 }
 
 .App-logo {
@@ -96,7 +101,7 @@
   align-content: center;
 }
 
-.val {
+/* .val {
   margin: 45% auto 60% auto;
   padding: 5% 15% 5% 15%;
   width: max-content;
@@ -105,7 +110,7 @@
   margin: 45% 0 55% 0;
   padding: 5%;
   width: max-content;
-}
+} */
 time {
   margin: 10% 0;
 }
@@ -285,18 +290,24 @@ hr {
 .newclock {
   margin: 15% 0;
 }
-
+.clock_input{
+  margin: 2rem 0;
+}
 @media only screen and (max-height: 770px) {
   .newclock {
     margin: 5% 0;
   }
   .work {
-    margin: 40% 0 50% 0;
+    margin: 30% 0 50% 0;
   }
   .val {
-    margin: 40% auto 50% auto;
+    margin: 10% auto 50% auto;
+  }
+  .clock_input {
+    margin: 2rem 0 0 0;
   }
 }
+
 
 /*LOGO DE VERITAS*/
 
@@ -388,3 +399,4 @@ hr {
 @keyframes seven {
   100% {left:360%;}
 }
+

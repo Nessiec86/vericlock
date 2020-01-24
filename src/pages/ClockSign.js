@@ -99,6 +99,19 @@ class Clocksign extends Component {
         const utcString = dateObj.toString(); 
         time = utcString.slice(16, 24); 
       
+        const val = {
+            borderRadius:'45px',
+            padding:'24px 11px',
+            margin: '25% auto 60% auto',
+            width: 'min-content',
+        }
+        const work = {
+            margin: '15% 0 55% 0',
+            width: 'min-content',
+            borderRadius:'45px',
+            padding:'9px 15px',
+        }
+
         return (
             <div className='clock-sign'>
                 <input
@@ -106,7 +119,8 @@ class Clocksign extends Component {
                     onChange={this.handleChange}
                     name="text"
                     value={text}
-                    style={{margin:'2rem 0'}}
+                    className='clock_input'
+                    //style={{margin:'2rem 0'}}
                     type="password"
                 />
                 <p style={{margin:'1rem auto'}}>{name}</p>
@@ -117,20 +131,20 @@ class Clocksign extends Component {
                 }
                 <div style={{alignSelf: 'center'}}>
                     { verify === true ?
-                        <img src={icon} style={{width: '30%', position: 'absolute', margin: '-15% 0 0 -13%'}} alt='Okey'/>
+                        <img src={icon} style={{width: '30%', position: 'absolute', margin: '-20% 0 0 -13%'}} alt='Okey'/>
                         :
                         <div>
                         </div>
                     }
                 </div>
                 { name === '' || text.length < 9 ?
-                    <Button variant="success" className='val' onClick={() => this.handleSubmit(text)}>VALIDAR</Button>
+                    <Button variant="success" className='val' style={val} onClick={() => this.handleSubmit(text)}>VALIDAR</Button>
                 : 
                     <div style={{display:'flex', justifyContent:'center'}}>
                         {start === 0 ?
-                            <Button variant="success" className='work' onClick={() => this.handleWork(text)}>EMPEZAR A TRABAJAR</Button>
+                            <Button variant="success" className='work' style={work} onClick={() => this.handleWork(text)}>EMPEZAR A TRABAJAR</Button>
                         :
-                            <Button variant="danger" className='work' onClick={() => this.handleWork(text)}>DEJAR DE TRABAJAR</Button>
+                            <Button variant="danger" className='work' style={work} onClick={() => this.handleWork(text)}>DEJAR DE TRABAJAR</Button>
                         }
                     </div>
                 }
