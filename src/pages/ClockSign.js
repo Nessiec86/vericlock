@@ -11,6 +11,7 @@ class Clocksign extends Component {
         data: {
             data: {
                 id:'',
+                activo: '',
                 name: '',
                 start: '',
             },
@@ -55,6 +56,7 @@ class Clocksign extends Component {
                 data: {
                     data: {
                         id:'',
+                        activo: '',
                         name: '',
                         start: '',
                     },
@@ -83,6 +85,7 @@ class Clocksign extends Component {
                 data: {
                     data: {
                         id:'',
+                        activo: '',
                         name: '',
                         start: '',
                     },
@@ -94,11 +97,11 @@ class Clocksign extends Component {
     render() {
         let time = 0
         const { text, verify } = this.state
-        const { name, start } = this.state.data.data
+        const { name, start, activo } = this.state.data.data
         const dateObj = new Date(start * 1000); 
         const utcString = dateObj.toString(); 
         time = utcString.slice(16, 24); 
-      
+        
         const val = {
             borderRadius:'45px',
             padding:'24px 11px',
@@ -111,6 +114,12 @@ class Clocksign extends Component {
             borderRadius:'45px',
             padding:'9px 15px',
         }
+        const undo = {
+            margin: '15% 0 55% 0',
+            width: 'min-content',
+            borderRadius:'45px',
+            padding:'21px 6px',
+        }
 
         return (
             <div className='clock-sign'>
@@ -121,10 +130,10 @@ class Clocksign extends Component {
                     value={text}
                     className='clock_input'
                     //style={{margin:'2rem 0'}}
-                    type="password"
+                    type="text"
                 />
                 <p style={{margin:'1rem auto'}}>{name}</p>
-                {start > 0 ?
+                {start > 0 && activo === 0 ?
                     <p style={{margin: '0 auto'}}> Hora de Entrada: {time}</p>
                 :
                     <p style={{margin:'1.3rem 0'}}></p>
@@ -141,13 +150,20 @@ class Clocksign extends Component {
                     <Button variant="success" className='val' style={val} onClick={() => this.handleSubmit(text)}>VALIDAR</Button>
                 : 
                     <div style={{display:'flex', justifyContent:'center'}}>
-                        {start === 0 ?
-                            <Button variant="success" className='work' style={work} onClick={() => this.handleWork(text)}>EMPEZAR A TRABAJAR</Button>
+                        { activo === 1 ?
+                            <Button variant="info" className='work' style={undo}>USUARIO DESACTIVADO</Button>
                         :
+                        <div>
+                            { start === 0 ?
+                            <Button variant="success" className='work' style={work} onClick={() => this.handleWork(text)}>EMPEZAR A TRABAJAR</Button>
+                            :
                             <Button variant="danger" className='work' style={work} onClick={() => this.handleWork(text)}>DEJAR DE TRABAJAR</Button>
+                            }
+                        </div>
                         }
                     </div>
-                }
+                    }
+                    
             </div>
         );
     }

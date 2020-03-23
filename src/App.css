@@ -292,6 +292,7 @@ hr {
 }
 .clock_input{
   margin: 2rem 0;
+  text-align: center;
 }
 @media only screen and (max-height: 770px) {
   .newclock {
